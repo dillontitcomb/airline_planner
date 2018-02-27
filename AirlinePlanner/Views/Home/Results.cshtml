@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <title>Airline Planner</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Choose a flight that suits your travel desires!</h1>
+			</div>
+        @if(Model!=null)
+        {
+          foreach (var flight in Model)
+          {
+          <h1>From @flight.GetDepCityId() to @flight.GetArrCityId()</h1>
+          }
+        }
+				<h5><strong><a href="/">Return to homepage</a></strong></h5>
+    </div>
+  </body>
+</html>

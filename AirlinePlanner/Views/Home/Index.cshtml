@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <title>Airline Planner</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Plan your next vacation!</h1>
+				<h4>Add departure and arrival cities below to see your options.</h4>
+			</div>
+			<form action="/results" method="post">
+				<label for="dep-city">Departure City:</label>
+				<input type="text" name="dep-city" required>
+				<hr>
+        <label for="arr-city">Arrival City:</label>
+        <input type="text" name="arr-city" required>
+        <hr>
+				<button type="submit" class="btn btn-info">Submit</button>
+				<hr>
+				<h5><strong><a href="/">Return to homepage</a></strong></h5>
+    </div>
+  </body>
+</html>

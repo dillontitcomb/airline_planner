@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <title>Airline Planner</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Add Flights to Air Travel Database.</h1>
+				<h4><em>Administrator View</em></h4>
+			</div>
+			<form action="/flights" method="post">
+				<label for="airline">Airline:</label>
+				<input type="text" name="airline" required>
+				<hr>
+        <label for="departure-city">Departure City:</label>
+        <select name="departure-city">
+          @if(Model!=null)
+  					{
+  						foreach (var city in Model)
+  						{
+  							<option value=@city.GetId()>@city.GetName()</option>
+  						}
+  					}
+        </select>
+        <label for="arrival-city">Arrival City:</label>
+        <select name="arrival-city">
+          @if(Model!=null)
+            {
+              foreach (var city in Model)
+              {
+                <option value=@city.GetId()>@city.GetName()</option>
+              }
+            }
+        </select>
+        <hr>
+				<button type="submit" class="btn btn-info">Submit</button>
+				<hr>
+				<h5><strong><a href="/flights">Return to flights list</a></strong></h5>
+    </div>
+  </body>
+</html>

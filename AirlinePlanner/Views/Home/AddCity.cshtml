@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <title>Airline Planner</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Add Cities to Air Travel Database.</h1>
+				<h4><em>Administrator View</em></h4>
+			</div>
+			<form action="/cities" method="post">
+				<label for="city-name">Name:</label>
+				<input type="text" name="city-name" required>
+				<hr>
+        <label for="city-size">City Size:</label>
+        <select name="city-size">
+          <option value="rural">Rural</option>
+          <option value="small-town">Small Town</option>
+          <option value="city">City</option>
+          <option value="metropolis">Metropolis</option>
+        </select>
+        <hr>
+				<button type="submit" class="btn btn-info">Submit</button>
+				<hr>
+				<h5><strong><a href="/cities">Return to cities list</a></strong></h5>
+    </div>
+  </body>
+</html>
