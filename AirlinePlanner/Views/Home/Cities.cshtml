@@ -9,6 +9,7 @@
     <div class="container">
       <div class="jumbotron">
         <h1>All Available Cities</h1>
+        <h4><em>Administrator View</em></h4>
 			</div>
         @if(Model!=null)
         {
@@ -17,7 +18,7 @@
           <h1>@city.GetName()</h1>
           }
         }
-				<h5><strong><a href="/">Return to homepage</a></strong></h5>
+				<h5><strong><a href="/">Home</a></strong> | <strong><a href="/cities/add">Add City</a></strong></h5>
     </div>
   </body>
 </html>

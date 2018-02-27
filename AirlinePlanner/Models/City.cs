@@ -64,5 +64,28 @@ namespace AirlinePlannerApp.Models
       }
       return allCities;
     }
+    public void Save()
+	 	{
+			MySqlConnection conn = DB.Connection();
+			conn.Open();
+
+			var cmd = conn.CreateCommand() as MySqlCommand;
+			cmd.CommandText = @"INSERT INTO cities (name, size) VALUES (@cityName, @citySize);";
+
+			MySqlParameter cityName = new MySqlParameter("@cityName", this._name);
+			cmd.Parameters.Add(cityName);
+
+      MySqlParameter citySize = new MySqlParameter("@citySize", this._size);
+      cmd.Parameters.Add(citySize);
+
+			cmd.ExecuteNonQuery();
+			_id = (int) cmd.LastInsertedId;
+
+			conn.Close();
+			if (conn != null)
+			{
+			conn.Dispose();
+			}
+	 	}
   }
 }
