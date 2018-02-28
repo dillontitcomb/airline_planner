@@ -13,10 +13,13 @@
 			</div>
         @if(Model!=null)
         {
-          <h1>To, From:</h1>
-          foreach (var city in Model.GetCities())
+          <h1>@Model.GetAirline()</h1>
+          <h2>@Model.GetDepCityId()</h2>
+          <h3>@Model.GetCities()</h3>
+          foreach (var city in @Model.GetCities())
           {
-          <h1>@city.GetName()</h1>
+            <h1>@city.GetName()</h1>
+            <h1>@city.GetAirline()</h1>
           }
         }
 				<h5><strong><a href="/">Home</a></strong> | <strong><a href="/cities/add">Add City</a></strong></h5>

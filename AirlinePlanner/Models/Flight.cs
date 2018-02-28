@@ -116,10 +116,9 @@ namespace AirlinePlannerApp.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT flights.dep_city_id, flights.arr_city_id FROM flights
-          JOIN cities AS cities1 ON (cities.id = flights.dep_city_id)
-          JOIN cities AS cities2 ON (cities.id = flights.arr_city_id)
-          WHERE flights.id = @flightId;";
+      cmd.CommandText = @"SELECT cities.id, cities.name, cities.size FROM cities
+          JOIN flights AS flights1 ON (cities.id = flights1.dep_city_id)
+          JOIN flights AS flights2 ON (cities.id = flights2.arr_city_id)";
 
       MySqlParameter flightIdParameter = new MySqlParameter("@flightId", _id);
       cmd.Parameters.Add(flightIdParameter);

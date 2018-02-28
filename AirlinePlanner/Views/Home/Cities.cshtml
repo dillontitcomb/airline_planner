@@ -12,8 +12,9 @@
         <h4><em>Administrator View</em></h4>
 			</div>
         @if(Model!=null)
+        <h1>@Model.GetAirline()</h1>
         {
-          foreach (var city in Model)
+          foreach (var city in @Model)
           {
           <h1>@city.GetName()</h1>
           }
